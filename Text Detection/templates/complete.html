@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Text Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area" style="background-color: #F08080">
+
+        <!-- Top Header Area -->
+        
+
+        <!-- Navbar Area -->
+        <div class="clever-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <!-- Menu -->
+
+                    <!-- Logo -->
+                    
+               <br> <center><h1 style="font-family: Damion;">Text Detection in an Image Using EAST</h1></center>
+                <br>
+                    <!-- Menu -->
+                
+            </div>
+        </div>
+    </header>
+    
+
+
+    <section class="section-padding-100-0 d-flex justify-content-between align-items-center" style="background-color: rgba(214, 223, 251, 0.7)">
+        <div class="container">
+
+            <div class="row" >
+                <!-- Single Popular Course -->
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="250ms">
+                        <img src="{{ url_for('static', filename=input_image) }}" alt="gitam vizag">
+                        <!-- Course Content -->
+                        <div class="course-content">
+                            <h4>Input Image</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Popular Course -->
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <img src="{{ url_for('static', filename=out_image) }}" alt="gitam Hyderabad">
+                        <!-- Course Content -->
+                        <div class="course-content">
+                            <h4>Output Image</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Popular Course -->
+                
+            </div>
+        </div>
+    </section>
+    <!-- ##### Campus ##### -->
+
+
+
+
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ url_for('static', filename='js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <!-- Popper js -->
+    <script src="{{ url_for('static', filename='js/bootstrap/popper.min.js') }}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ url_for('static', filename='js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ url_for('static', filename='js/active.js') }}"></script>
+</body>
+
+</html>

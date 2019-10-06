@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Text Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header class="header-area" style="background-color: #F08080">
+        <div class="clever-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+               <br> <center><h1 style="font-family: Damion;">Text Detection in an Image Using EAST</h1></center>
+                <br>
+            </div>
+        </div>
+    </header>
+    <section class="hero-area bg-img bg-overlay-2by5" style="background-color: rgba(214, 223, 251, 0.7)">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                   
+                    <div class="hero-content text-center">
+                        <h2 style="color: black;">Detecting the presence of text within a given image and isolating the region containing the text enclosed in a bounding box
+</h2>
+
+                        <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+                        <center><input id="file-picker" type="file" name="file" accept="image/*" multiple></center> 
+    <div id="msg"></div>
+    <br>
+                        <input type="submit" value="Try It Yourself" name="upload-button" class="btn clever-btn">
+                    
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+<section class="images-area section-padding-100-0" style="background-image: url(img/core-img/texture.png);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>Click on Image Button for Text Detection</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+               
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="250ms">
+                        <img src="{{ url_for('static', filename=stop_image) }}" alt="image 1">
+                       
+                        
+                            <div style="padding: 20px;"><center><form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                                <input type="submit" name="upload-button" class="btn clever-btn" value="stop.jpg" id="upload">
+                            </form>
+                            </center>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <img src="{{ url_for('static', filename=kan_image) }}" alt="image 2">
+                        
+                             <div style="padding: 20px;"><center><form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                                <input type="submit" name="upload-button" class="btn clever-btn" value="kanchipuram.jpg" id="upload">
+                            </form>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Popular Course -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="750ms">
+                        <img src="{{ url_for('static', filename=tir_image) }}" alt="image 3">
+                        <!-- Course Content -->
+                        
+                              <div style="padding: 20px;"><center><form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                                <input type="submit" name="upload-button" class="btn clever-btn" value="tirujunction.jpg" id="upload">
+                            </form>
+                            </center>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding-100-0 d-flex justify-content-between align-items-center" style="background-color: rgba(214, 223, 251, 0.7)">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>Resources</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+       
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="250ms">
+                        <img src="{{ url_for('static', filename='research.jpg') }}" alt="research">
+                        
+                        <div class="course-content">
+                            <h4>EAST Text Detection</h4>
+                            <a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Zhou_EAST_An_Efficient_CVPR_2017_paper.pdf">Research Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+          
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <img src="{{ url_for('static', filename='github.gif') }}" alt="github">
+                        
+                        <div class="course-content">
+                            <h4>EAST Implementation</h4>
+                            <a href="https://github.com/spmallick/learnopencv/tree/master/TextDetectionEAST">Get Code</a>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-image mb-100 wow fadeInUp" data-wow-delay="750ms">
+                        <img src="{{ url_for('static', filename='youtube.jpg') }}" alt="youtube">
+                      
+                        <div class="course-content">
+                            <a href="https://www.youtube.com/watch?v=bxFaa_FNdL4&list=PL-cS6ZwDCr6rPTisIHeGtUfzN0L3USZIc"><h5>Python and Flask Image Tutorial</h5></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/jquery/jquery-2.2.4.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/bootstrap/popper.min.js') }}"></script>
+   
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/plugins/plugins.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/active.js') }}"></script>
+
+
+
+
+    
+</body>
+
+</html>
