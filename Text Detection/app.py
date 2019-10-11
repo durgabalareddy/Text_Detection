@@ -179,10 +179,10 @@ def upload():
             p1 = (vertices[j][0], vertices[j][1])
             p2 = (vertices[(j + 1) % 4][0], vertices[(j + 1) % 4][1])
             cv.line(frame, p1, p2, (0, 255, 0), 2, cv.LINE_AA)
-        
+    link = storage.child("images/"+filename).get_url(None)
     cv.imwrite(os.path.join(target,"out"+filename),frame)
 
-    return render_template("complete.html", out_image="out"+filename,input_image=filename)
+    return render_template("complete.html", out_image="out"+filename,input_image=filename,l=link)
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
 
