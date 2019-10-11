@@ -108,11 +108,11 @@ app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 if not os.path.exists(APP_ROOT+"\static//stop.jpg"):
-    storage.child("static/stop.jpg").download(APP_ROOT+"\static//stop.jpg")
+    storage.child("images/stop.jpg").download(APP_ROOT+"\static//stop.jpg")
 if not os.path.exists(APP_ROOT+"\static//kanchipuram.jpg"):
-    storage.child("static/kanchipuram.jpg").download(APP_ROOT+"\static//kanchipuram.jpg")
+    storage.child("images/kanchipuram.jpg").download(APP_ROOT+"\static//kanchipuram.jpg")
 if not os.path.exists(APP_ROOT+"\static//tirujunction.jpg"):
-    storage.child("static/tirujunction.jpg").download(APP_ROOT+"\static//tirujunction.jpg")
+    storage.child("images/tirujunction.jpg").download(APP_ROOT+"\static//tirujunction.jpg")
 
 
 @app.route("/")
@@ -128,6 +128,7 @@ def upload():
         for file in request.files.getlist("file"):
             filename = file.filename
             destination = "/".join([target, filename])
+            storage.child("images/"+filename).put(file)
             file.save(destination)
     else:
         filename = request.form["upload-button"]
